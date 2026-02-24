@@ -1,0 +1,8 @@
+.env
+keys.md
+docs/
+reference_code/
+__pycache__/
+*.pyc
+.streamlit/secrets.toml
+.DS_Store

@@ -1,47 +1,46 @@
-# Sesion 1 — Checklist de inicio
+# Sesión 1 — Checklist de inicio
 
-Antes de empezar la sesion, verifica que todo funciona.
+Antes de empezar la sesión, verifica que todo funciona.
 
 ## Antes de clase (hazlo en casa)
 
 - [ ] Entorno `mda13` creado y dependencias instaladas (ver `SETUP.md`)
-- [ ] VS Code instalado con extension de Python, interprete apuntando a `mda13`
+- [ ] VS Code instalado con extensión de Python, intérprete apuntando a `mda13`
 - [ ] Proyecto descargado (repositorio clonado o zip descomprimido)
 - [ ] `streamlit run test_app.py` muestra todos los checks en verde
-- [ ] Leido el caso FitLife (`CASO_FITLIFE.md`)
+- [ ] Leído el enunciado del caso FitLife (`ENUNCIADO.md`)
 
 ## Al empezar la clase
 
 - [ ] Abrir VS Code en la carpeta del proyecto
 - [ ] Abrir una terminal en VS Code
-- [ ] Ejecutar `streamlit run app.py` — debe abrir el dashboard de FitLife
-- [ ] Verificar que ves los graficos y los filtros funcionan
+- [ ] Ejecutar `streamlit run exercises/paso_0.py` — verás un error (es intencionado, lo arreglamos juntos)
 
-## Lo que haremos en la sesion 1
+## Lo que haremos en la sesión 1
 
-1. Explorar el dashboard (ya hecho, lo explicamos)
+1. Completar los ejercicios guiados (paso 0 a 6)
 2. Conocer el caso FitLife y la pregunta clave
-3. Anadir un chat con IA al dashboard
-4. Probar 10 preguntas y documentar que funciona y que falla
-5. Mejorar el prompt y volver a probar
+3. Conectar un LLM a nuestra app
+4. Probar preguntas y documentar qué funciona y qué falla
+5. Descubrir por qué el LLM se inventa las respuestas
 
-## Lo que necesitaras durante la clase
+## Lo que necesitarás durante la clase
 
-- El profesor compartira una API key de OpenAI al inicio de la sesion
+- El profesor compartirá una API key de OpenAI al inicio de la sesión
 - Crea un archivo `.env` en la carpeta del proyecto con:
 
 ```
 OPENAI_API_KEY=la-key-que-te-de-el-profesor
 ```
 
-## Al final de la sesion deberas tener
+## Al final de la sesión deberás tener
 
 - [ ] App Streamlit funcionando con chat de IA integrado
-- [ ] Lista personal de las 10 preguntas probadas: cuales funcionan, cuales fallan, y por que crees que fallan
-- [ ] Prompt enriquecido documentado (que anadiste y que efecto tuvo)
+- [ ] Lista personal de preguntas probadas: cuáles funcionan, cuáles fallan, y por qué crees que fallan
+- [ ] Reflexión sobre las limitaciones de enviar datos directamente al LLM
 
-El profesor compartira el codigo de referencia de la sesion 1 al final de la clase. Ese codigo es el punto de partida de la sesion 2.
+El profesor compartirá el código de referencia de la sesión 1 al final de la clase. Ese código es el punto de partida de la sesión 2.
 
 ## Si algo no funciona
 
-Avisa al profesor antes de la sesion si puedes. Si no, al inicio de la clase verificaremos juntos.
+Avisa al profesor antes de la sesión si puedes. Si no, al inicio de la clase verificaremos juntos.

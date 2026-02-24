@@ -12,7 +12,7 @@
 #
 # ESTE PASO NO TIENE NADA ROTO. Funciona tal cual.
 #
-# Tu reto es otro: prueba estas preguntas y anota para
+# Tu reto es otro: prueba estas 5 preguntas y anota para
 # cada una si la respuesta es correcta o inventada.
 #
 #   1. ¿Cuántos registros tiene el dataset de socios?
@@ -21,8 +21,24 @@
 #   4. ¿Cuál es la tasa de churn del plan básico?
 #   5. ¿Debería FitLife bajar el precio del plan básico?
 #
-# Pregunta:  ¿funciona bien? ¿qué falla? ¿por qué crees
-#            que falla?
+# ── Anota tus resultados ────────────────────────────────────
+#
+#   Pregunta 1 (registros):  ¿Correcto?       ¿Qué dijo?
+#   Pregunta 2 (planes):     ¿Correcto?       ¿Qué dijo?
+#   Pregunta 3 (centro):     ¿Correcto?       ¿Qué dijo?
+#   Pregunta 4 (churn):      ¿Correcto?       ¿Qué dijo?
+#   Pregunta 5 (precio):     ¿Correcto?       ¿Qué dijo?
+#
+# Pista: en paso_3 viste los datos reales con st.dataframe().
+# Puedes volver a ejecutar paso_3 para comprobar las respuestas
+# del LLM contra los datos de verdad.
+#
+# Cuando termines, comparte tus resultados en el chat de clase.
+#
+# Pregunta para pensar:  ¿funciona bien? ¿qué falla? ¿por
+#                         qué crees que falla? Fíjate en el
+#                         código — ¿qué datos le estamos
+#                         pasando realmente al LLM?
 #
 # Ejecuta:  streamlit run exercises/paso_6.py
 # ============================================================

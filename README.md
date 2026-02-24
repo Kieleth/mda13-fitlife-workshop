@@ -10,7 +10,7 @@ El caso de estudio es **FitLife**, una red de gimnasios con un problema de churn
 
 | Archivo | Qué es |
 |---------|--------|
-| `exercises/` | Ejercicios guiados (paso 0 a 6) que irás completando en clase |
+| `exercises/` | Ejercicios guiados (paso 0 a 7) que irás completando en clase |
 | `data/` | Los datasets de FitLife (miembros + contexto mensual) |
 | `test_app.py` | App de verificación — confirma que tu entorno está bien configurado |
 | `ENUNCIADO.md` | El caso de negocio: contexto, datos disponibles y la pregunta a resolver |
@@ -46,8 +46,9 @@ Cada ejercicio es un archivo Python que puedes ejecutar con `streamlit run exerc
 | `paso_4.py` | Un chat que repite lo que escribes | El chat del usuario funciona, pero el asistente no responde. | Completa la línea `___` dentro del bloque `with st.chat_message("assistant")`. |
 | `paso_5.py` | Conectar un LLM de verdad | Falta crear el cliente de OpenAI. Necesitarás una API key en un archivo `.env`. | La línea que falta es `OpenAI()`. La API key te la dará el profesor. Mira `.env.template` para el formato del archivo. |
 | `paso_6.py` | Preguntarle al LLM sobre los datos | Nada está roto. Tu reto es probar preguntas y evaluar si las respuestas son correctas. | Prueba preguntas concretas ("¿cuántos registros hay?") y preguntas analíticas ("¿cuál es la tasa de churn?"). Compara las respuestas con lo que ves en los datos reales. ¿Qué descubres? |
+| `paso_7.py` | **Bonus.** Enriquecer el prompt con contexto real | Completa los huecos del prompt con estadísticas y descripciones. Repite las 5 preguntas y compara con paso_6. | Las variables que necesitas ya están calculadas arriba en el código. Además hay 4 retos opcionales para explorar: temperatura, persona, prompt injection y memoria. |
 
-**La idea clave:** al final del paso 6 verás que el LLM se inventa números cuando le preguntas cosas que requieren calcular sobre los datos. Solo ve una muestra de 5 filas, así que adivina el resto. Esto es exactamente el problema que resolveremos en las siguientes sesiones.
+**La idea clave:** al final del paso 6 verás que el LLM se inventa números cuando le preguntas cosas que requieren calcular sobre los datos. Solo ve una muestra de 5 filas, así que adivina el resto. El paso 7 demuestra que incluso con más contexto, el problema persiste — el LLM no tiene calculadora. Esto es exactamente lo que resolveremos en las siguientes sesiones.
 
 ---
 

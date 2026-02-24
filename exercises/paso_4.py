@@ -16,6 +16,18 @@
 #   st.chat_message("assistant") -> igual, pero con icono de
 #                                   asistente.
 #
+# ¿Qué es "with"?
+#
+#   with st.chat_message("user"):
+#       st.write("hola")        ← esto aparece dentro del bocadillo
+#
+#   Todo lo que va indentado (con espacios) debajo de "with"
+#   se muestra dentro de ese bloque de chat. Es como decir:
+#   "todo esto va dentro del bocadillo del usuario/asistente".
+#
+#   VS Code indenta automáticamente cuando pulsas Enter después
+#   de una línea que termina en ":"
+#
 # Tu reto: completa el bloque del final para que cuando el
 # usuario escriba algo, la app lo repita como un eco.
 #
@@ -46,5 +58,7 @@ if prompt:
         st.write(prompt)
 
     # 2. Muestra una respuesta del "asistente" (por ahora, un eco)
+    #    ↓ Borra ___ y escribe: st.write(f"Has dicho: {prompt}")
+    #    Importante: debe ir indentado (con espacios) dentro del with
     with st.chat_message("assistant"):
-        ___  # Escribe aquí: st.write(f"Has dicho: {prompt}")
+        ___

@@ -13,7 +13,24 @@
 # Tu reto: esta app intenta cargar datos pero falla.
 # Ejecútala, lee el error y arregla la ruta del archivo.
 #
-# Pista: los archivos CSV están dentro de la carpeta data/
+# Estructura del proyecto (mira dónde están los CSV):
+#
+#   mda13-fitlife-workshop/
+#   ├── exercises/
+#   │   ├── paso_0.py
+#   │   ├── paso_1.py
+#   │   ├── paso_2.py  ← estás aquí
+#   │   └── ...
+#   ├── data/
+#   │   ├── fitlife_members.csv   ← este archivo
+#   │   └── fitlife_context.csv
+#   ├── test_app.py
+#   └── ...
+#
+# Importante: cuando ejecutas "streamlit run exercises/paso_2.py",
+# el código se ejecuta desde la raíz del proyecto (la carpeta
+# mda13-fitlife-workshop/). Las rutas en el código son relativas
+# a esa raíz.
 #
 # Ejecuta:  streamlit run exercises/paso_2.py
 # ============================================================

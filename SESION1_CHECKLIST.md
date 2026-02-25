@@ -18,7 +18,7 @@ Antes de empezar la sesión, verifica que todo funciona.
 
 ## Lo que haremos en la sesión 1
 
-1. Completar los ejercicios guiados (paso 0 a 6)
+1. Completar los ejercicios guiados (paso 0 a 6, más paso 7 bonus si hay tiempo)
 2. Conocer el caso FitLife y la pregunta clave
 3. Conectar un LLM a nuestra app
 4. Probar preguntas y documentar qué funciona y qué falla

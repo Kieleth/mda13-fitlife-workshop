@@ -82,7 +82,7 @@ Dataset 2 - Contexto mensual (muestra de 5 filas de {len(df_context)} totales):
 Columnas: {list(df_context.columns)}"""
 
         response = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="gpt-4.1-mini",
             messages=[
                 {"role": "system", "content": context},
                 {"role": "user", "content": prompt}

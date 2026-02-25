@@ -32,7 +32,7 @@
 #   A. TEMPERATURA
 #      En la llamada a la API, añade temperature=0:
 #        response = client.chat.completions.create(
-#            model="gpt-4o-mini",
+#            model="gpt-4.1-mini",
 #            temperature=0,
 #            messages=[...]
 #        )
@@ -162,7 +162,7 @@ IMPORTANTE: solo tienes una muestra de 5 filas del dataset de socios.
 Si no puedes calcular algo con certeza, dilo claramente. No inventes números."""
 
         response = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="gpt-4.1-mini",
             messages=[
                 {"role": "system", "content": context},
                 {"role": "user", "content": prompt}

@@ -2,23 +2,42 @@
 # PASO 5 — Conecta el cerebro
 # ============================================================
 #
-# Hasta ahora la app solo repite lo que escribes. Vamos a
-# conectar un LLM (Large Language Model) para que responda
-# de verdad.
+# ── ¿Qué es un LLM? ────────────────────────────────────────
 #
-# Un LLM es un modelo de inteligencia artificial entrenado
-# para entender y generar texto. Lo usaremos a través de la
-# API de OpenAI — una puerta de entrada que nos permite
-# enviarle texto y recibir una respuesta.
+# Un LLM (Large Language Model) es un programa que ha leído
+# cantidades absurdas de texto: miles de millones de páginas
+# web, libros, artículos, código. De todo eso ha aprendido
+# patrones de lenguaje.
 #
-# Para usarlo necesitas dos cosas:
+# Cuando le hacéis una pregunta, no busca la respuesta en
+# ningún sitio. Genera texto palabra por palabra basándose en
+# los patrones que aprendió. Es como un compañero que ha leído
+# todo internet, tiene una memoria impresionante para el
+# lenguaje, pero no tiene calculadora.
 #
-#   1. Una API key (una contraseña que te identifica).
-#      El profesor la compartirá por el chat de clase.
+# Retened eso: no tiene calculadora. Es importante después.
 #
-#   2. Un archivo .env en la raíz del proyecto.
+# ── ¿Qué es una API? ───────────────────────────────────────
+#
+# Una API es una puerta de entrada. Vosotros enviáis un mensaje
+# de texto a través de internet, OpenAI lo recibe, se lo pasa
+# al modelo, el modelo genera una respuesta, y os la devuelve.
+# Todo en 2-3 segundos.
+#
+#   Tu app → mensaje → API de OpenAI → modelo → respuesta → tu app
+#
+# ── ¿Qué es una API key? ───────────────────────────────────
+#
+# Una contraseña que os identifica. Cada petición cuesta dinero
+# (fracciones de céntimo), así que OpenAI necesita saber quién
+# pide qué. El profesor os da una clave para el taller — no la
+# compartáis fuera de clase.
 #
 # ── Cómo crear el archivo .env ──────────────────────────────
+#
+# La API key no va en el código (si lo subierais a internet,
+# todo el mundo la vería). Va en un archivo separado llamado
+# .env que el código lee automáticamente.
 #
 #   1. En VS Code, ve al explorador de archivos (panel izquierdo)
 #   2. Haz clic derecho en la carpeta raíz del proyecto
@@ -55,6 +74,21 @@
 #
 # Completa la línea marcada con ___ para crear el cliente
 # de OpenAI. Es solo una palabra: OpenAI()
+#
+# ── Si has terminado antes ──────────────────────────────────
+#
+#   A. Prueba preguntas de distintos tipos:
+#      - Conocimiento: "¿Quién escribió El Quijote?"
+#      - Matemáticas: "¿Cuánto es 347 × 28?"
+#      - Código: "Escribe una función en Python que sume dos números"
+#      - Creatividad: "Escribe un haiku sobre datos"
+#      ¿En cuáles responde mejor? ¿En cuáles peor?
+#
+#   B. Prueba a preguntarle en inglés y en español la misma
+#      cosa. ¿Cambia la calidad de la respuesta?
+#
+#   C. Prueba: "¿Qué sabes sobre FitLife, una red de gimnasios?"
+#      ¿Sabe algo? ¿Se lo inventa? ¿Cómo lo sabrías?
 #
 # Ejecuta:  streamlit run exercises/paso_5.py
 # ============================================================

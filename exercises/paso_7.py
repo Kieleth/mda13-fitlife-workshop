@@ -2,18 +2,27 @@
 # PASO 7 — Dale contexto de verdad  (Bonus)
 # ============================================================
 #
+# ── La hipótesis ────────────────────────────────────────────
+#
 # En paso_6 el LLM recibía solo 5 filas de muestra y los
-# nombres de las columnas. Con eso, se inventaba los números.
+# nombres de las columnas. Con eso, no podía calcular nada
+# real sobre 16.334 filas.
 #
-# ¿Y si le damos más contexto? En este paso vamos a enriquecer
-# el prompt con descripciones de las columnas, estadísticas
-# reales y reglas de negocio. La idea: cuanto más sepa el LLM
-# sobre los datos, mejor debería responder.
+# La hipótesis natural es: si le damos MÁS contexto — las
+# descripciones completas de las columnas, estadísticas
+# reales (distribuciones, conteos), reglas de negocio — las
+# respuestas deberían mejorar.
 #
-# ¿O no? Esa es la pregunta.
+# ¿Es cierto? Esa es la pregunta de este paso.
 #
-# Tu reto: completa las líneas marcadas con ___ en el prompt
-# y luego repite las mismas 5 preguntas del paso 6.
+# ── Tu reto ─────────────────────────────────────────────────
+#
+# Completa las 4 líneas marcadas con ___ en el prompt de
+# abajo. Cada ___ corresponde a una variable que ya está
+# calculada más arriba en el código (planes, centros, status,
+# canales). Mira las líneas 105-108.
+#
+# Después, repite las mismas 5 preguntas del paso 6:
 #
 #   1. ¿Cuántos registros tiene el dataset de socios?
 #   2. ¿Qué planes ofrece FitLife?
@@ -24,13 +33,27 @@
 # Compara las respuestas con paso_6. ¿Mejoran? ¿Todas?
 # ¿Cuáles siguen fallando? ¿Por qué?
 #
+# ── La lección ──────────────────────────────────────────────
+#
+# Las respuestas cualitativas (qué planes hay, descripción
+# general) mejoran bastante. Pero las numéricas (tasa de
+# churn, centro con más socios) siguen siendo poco fiables.
+#
+# ¿Por qué? Porque por mucho contexto que le des, el LLM
+# sigue sin tener una calculadora. No puede iterar sobre
+# 16.334 filas y contar. Solo puede "adivinar" basándose
+# en las distribuciones que le damos.
+#
+# ¿Y si en vez de pedirle la respuesta, le pidiéramos que
+# escriba el CÓDIGO para calcularla? Eso es la sesión 2.
+#
 # ── Retos opcionales (para mentes inquietas) ───────────────
 #
 # Si has terminado y quieres explorar más, prueba estas cosas.
 # No tienes que hacer ninguna — son para curiosos.
 #
 #   A. TEMPERATURA
-#      En la llamada a la API, añade temperature=0:
+#      En la llamada a la API (línea 176), añade temperature=0:
 #        response = client.chat.completions.create(
 #            model="gpt-4.1-mini",
 #            temperature=0,
@@ -63,6 +86,15 @@
 #      ¿Se acuerda de la primera pregunta? ¿Por qué no?
 #      (Pista: fíjate en cómo enviamos los mensajes a la
 #      API — ¿le pasamos el historial de conversación?)
+#
+#   E. LÍMITES DEL CONTEXTO
+#      El prompt incluye df_context.to_string() — las 36
+#      filas completas del contexto. ¿Y si también incluimos
+#      las 16.334 filas de socios? Prueba a cambiar
+#      df_members.head().to_string() por df_members.to_string()
+#      ¿Funciona? ¿Por qué sí o por qué no? Los modelos
+#      tienen un límite de "tokens" (palabras) que pueden
+#      recibir. gpt-4.1-mini acepta ~128.000 tokens.
 #
 # Ejecuta:  streamlit run exercises/paso_7.py
 # ============================================================

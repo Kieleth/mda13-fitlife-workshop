@@ -2,34 +2,57 @@
 # PASO 4 — Habla con la app
 # ============================================================
 #
-# Streamlit tiene componentes para crear un chat:
+# ── ¿Qué es un chat en Streamlit? ──────────────────────────
 #
-#   st.chat_input("texto")     ->  campo de texto donde el
-#                                   usuario escribe. Devuelve
-#                                   el mensaje o None si no
-#                                   ha escrito nada.
+# Streamlit tiene componentes para crear una interfaz de chat,
+# como la de WhatsApp o ChatGPT. Tres piezas:
 #
-#   st.chat_message("user")    ->  bloque visual con icono de
-#                                   usuario. Usa with: ... para
-#                                   poner contenido dentro.
+#   st.chat_input("texto")        -> Campo de texto donde el
+#                                    usuario escribe. Devuelve
+#                                    el mensaje o None si no
+#                                    ha escrito nada.
 #
-#   st.chat_message("assistant") -> igual, pero con icono de
-#                                   asistente.
+#   st.chat_message("user")       -> Bocadillo con icono de
+#                                    usuario.
 #
-# ¿Qué es "with"?
+#   st.chat_message("assistant")  -> Bocadillo con icono de
+#                                    asistente.
+#
+# ── ¿Qué es "with"? ────────────────────────────────────────
+#
+# En Python, "with" seguido de dos puntos significa: todo lo
+# que va indentado (con espacios) debajo pertenece a este
+# bloque. Es como decir "esto va dentro de este contenedor":
 #
 #   with st.chat_message("user"):
-#       st.write("hola")        ← esto aparece dentro del bocadillo
+#       st.write("hola")     ← aparece dentro del bocadillo
+#       st.write("adiós")    ← también dentro del bocadillo
 #
-#   Todo lo que va indentado (con espacios) debajo de "with"
-#   se muestra dentro de ese bloque de chat. Es como decir:
-#   "todo esto va dentro del bocadillo del usuario/asistente".
+#   st.write("fuera")        ← esto ya NO está en el bocadillo
 #
-#   VS Code indenta automáticamente cuando pulsas Enter después
-#   de una línea que termina en ":"
+# VS Code indenta automáticamente cuando pulsáis Enter después
+# de una línea que termina en ":"
 #
-# Tu reto: completa el bloque del final para que cuando el
-# usuario escriba algo, la app lo repita como un eco.
+# ── Tu reto ─────────────────────────────────────────────────
+#
+# Completa el bloque del final para que cuando el usuario
+# escriba algo, la app lo repita como un eco.
+#
+# ── Si has terminado antes ──────────────────────────────────
+#
+#   A. Cambia el eco para que responda en mayúsculas:
+#        st.write(f"HAS DICHO: {prompt.upper()}")
+#      .upper() convierte texto a mayúsculas. ¿Qué otros
+#      métodos tiene un string? Prueba .lower(), .title(),
+#      len(prompt), prompt[::-1] (lo invierte).
+#
+#   B. Haz que el asistente responda con la longitud:
+#        st.write(f"Tu mensaje tiene {len(prompt)} caracteres.")
+#
+#   C. Añade un tercer bocadillo después del asistente:
+#        with st.chat_message("user", avatar="🤔"):
+#            st.write("¿Algo más?")
+#      El parámetro avatar cambia el icono. Prueba con otros.
 #
 # Ejecuta:  streamlit run exercises/paso_4.py
 # ============================================================

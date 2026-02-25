@@ -2,18 +2,26 @@
 # PASO 6 — Pregúntale sobre los datos
 # ============================================================
 #
-# El LLM funciona, pero no sabe nada de FitLife. Si le
-# preguntas "¿cuántos socios tiene FitLife?" se inventará
-# un número.
+# ── ¿Qué pasa cuando un LLM habla de datos que no ha visto?
 #
-# En este paso le pasamos los datos como contexto: le
-# describimos los datasets en el mensaje para que "sepa"
-# de qué estamos hablando.
+# En paso_5 el LLM respondía bien a preguntas generales:
+# historia, matemáticas, código. Pero esos son temas que
+# estaban en su entrenamiento (todo internet).
+#
+# FitLife es un caso inventado. El LLM nunca ha visto estos
+# datos. Si le preguntas "¿cuántos socios tiene FitLife?"
+# sin darle ningún contexto, se inventará un número.
+#
+# En este paso le pasamos algo de contexto: una muestra de
+# 5 filas y los nombres de las columnas. Así "sabe" de qué
+# estamos hablando. ¿Es suficiente?
+#
+# ── Tu reto ─────────────────────────────────────────────────
 #
 # ESTE PASO NO TIENE NADA ROTO. Funciona tal cual.
 #
-# Tu reto es otro: prueba estas 5 preguntas y anota para
-# cada una si la respuesta es correcta o inventada.
+# Tu misión es de detective: prueba estas 5 preguntas y anota
+# para cada una si la respuesta es correcta o inventada.
 #
 #   1. ¿Cuántos registros tiene el dataset de socios?
 #   2. ¿Qué planes ofrece FitLife?
@@ -35,10 +43,32 @@
 #
 # Cuando termines, comparte tus resultados en el chat de clase.
 #
-# Pregunta para pensar:  ¿funciona bien? ¿qué falla? ¿por
-#                         qué crees que falla? Fíjate en el
-#                         código — ¿qué datos le estamos
-#                         pasando realmente al LLM?
+# ── Pregunta para pensar ────────────────────────────────────
+#
+# Fíjate en el código de abajo, en la variable "context".
+# ¿Qué datos le estamos pasando realmente al LLM?
+# ¿Cuántas filas ve de 16.334? ¿Es suficiente para calcular
+# una tasa de churn o decidir si bajar precios?
+#
+# ── Si has terminado antes ──────────────────────────────────
+#
+#   A. Haz la pregunta 4 (tasa de churn) tres veces seguidas.
+#      ¿Da el mismo número? Si cambia cada vez, es que no lo
+#      está calculando — se lo está inventando.
+#
+#   B. Prueba una pregunta que SÍ pueda responder bien:
+#        "Describe las columnas del dataset de socios"
+#      ¿Por qué esta sí funciona y las numéricas no?
+#
+#   C. Prueba a preguntarle algo que no está en los datos:
+#        "¿Cuál es el NPS de FitLife?"
+#      ¿Dice que no lo sabe o se inventa un número?
+#
+#   D. Mira la línea 89: head(). Eso muestra solo 5 filas.
+#      ¿Qué pasaría si cambias head() por head(50)?
+#      ¿Mejorarían las respuestas? ¿Y head(1000)?
+#      ¿Dónde está el límite? (No hace falta probarlo —
+#      solo pensadlo. Lo exploraremos en el paso 7.)
 #
 # Ejecuta:  streamlit run exercises/paso_6.py
 # ============================================================

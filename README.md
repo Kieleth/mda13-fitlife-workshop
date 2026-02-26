@@ -8,16 +8,21 @@ El caso de estudio es **FitLife**, una red de gimnasios con un problema de churn
 
 ## Qué hay en este repositorio
 
-| Archivo | Qué es |
+| Archivo / Carpeta | Qué es |
 |---------|--------|
-| `exercises/` | Ejercicios guiados (paso 0 a 7) que irás completando en clase |
+| `exercises/` | Ejercicios sesión 1 (paso 0 a 7) |
+| `exercises2/` | Ejercicios sesión 2 (paso 8 a 11) |
+| `extras/` | Ejercicios opcionales para quienes quieran más |
 | `data/` | Los datasets de FitLife (miembros + contexto mensual) |
 | `test_app.py` | App de verificación — confirma que tu entorno está bien configurado |
 | `ENUNCIADO.md` | El caso de negocio: contexto, datos disponibles y la pregunta a resolver |
 | `PREGUNTAS_TEST.md` | Preguntas para probar tu aplicación de analítica conversacional |
 | `SETUP.md` | Guía de instalación paso a paso |
+| `ACTUALIZAR.md` | Cómo actualizar el proyecto entre sesiones |
+| `SESION1_REPASO.md` | Repaso completo de la sesión 1 con código resuelto |
 | `GIT_INTRO.md` | Qué es Git y GitHub en 5 minutos (lectura opcional) |
 | `SESION1_CHECKLIST.md` | Checklist para la primera sesión |
+| `SESION2_CHECKLIST.md` | Checklist para la segunda sesión |
 
 ---
 
@@ -48,7 +53,32 @@ Cada ejercicio es un archivo Python que puedes ejecutar con `streamlit run exerc
 | `paso_6.py` | Preguntarle al LLM sobre los datos | Nada está roto. Tu reto es probar preguntas y evaluar si las respuestas son correctas. | Prueba preguntas concretas ("¿cuántos registros hay?") y preguntas analíticas ("¿cuál es la tasa de churn?"). Compara las respuestas con lo que ves en los datos reales. ¿Qué descubres? |
 | `paso_7.py` | **Bonus.** Enriquecer el prompt con contexto real | Completa los huecos del prompt con estadísticas y descripciones. Repite las 5 preguntas y compara con paso_6. | Las variables que necesitas ya están calculadas arriba en el código. Además hay 4 retos opcionales para explorar: temperatura, persona, prompt injection y memoria. |
 
-**La idea clave:** al final del paso 6 verás que el LLM se inventa números cuando le preguntas cosas que requieren calcular sobre los datos. Solo ve una muestra de 5 filas, así que adivina el resto. El paso 7 demuestra que incluso con más contexto, el problema persiste — el LLM no tiene calculadora. Esto es exactamente lo que resolveremos en las siguientes sesiones.
+**La idea clave:** al final del paso 6 verás que el LLM se inventa números cuando le preguntas cosas que requieren calcular sobre los datos. Solo ve una muestra de 5 filas, así que adivina el resto. El paso 7 demuestra que incluso con más contexto, el problema persiste — el LLM no tiene calculadora. Esto es exactamente lo que resolveremos en la sesión 2.
+
+---
+
+## Ejercicios (sesión 2)
+
+En la sesión 2 resolvemos el problema de la sesión 1: en vez de pedirle al LLM que responda, le pedimos que **escriba código**. Python calcula sobre los datos reales. Los números son correctos.
+
+Ejecuta con `streamlit run exercises2/paso_X.py` (desde la raíz del proyecto).
+
+| Ejercicio | Qué construyes | El reto |
+|-----------|---------------|---------|
+| `paso_8.py` | Text-to-code: el LLM genera código | Completa el prompt del sistema para que el LLM genere Python en vez de texto. |
+| `paso_9.py` | Ejecutar el código generado | Completa la regex para extraer el código y el `exec()` para ejecutarlo. |
+| `paso_10.py` | Manejo de errores + transparencia | Añade try/except y un toggle para ver el código generado. |
+| `paso_11.py` | **Bonus.** Autocorrección | El LLM recibe el error y corrige su propio código. Sin blancos — léelo y pruébalo. |
+
+**La idea clave:** el LLM no necesita calcular — necesita *traducir*. Traduce tu pregunta en español a código Python. Python calcula. El resultado es real.
+
+---
+
+## Extras (opcionales)
+
+| Archivo | Qué es |
+|---------|--------|
+| `extras/opcional_analisis.py` | Analiza los datos de FitLife con código real. Responde las 5 preguntas del paso 6 con pandas — tu fuente de verdad. |
 
 ---
 

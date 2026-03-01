@@ -55,26 +55,56 @@
 #   1. Extraer el código de la respuesta del LLM (regex)
 #   2. Ejecutar el código con exec()
 #
-# Cuando funcione, prueba las 5 preguntas del paso_6.
-# Ahora las respuestas serán REALES — calculadas sobre
-# las 16.334 filas de verdad.
+# Cuando funcione, prueba esta pregunta:
+#   "¿Cuántos registros tiene el dataset de socios?"
+#
+# Ahora el resultado es REAL — calculado sobre las 16.334
+# filas de verdad. Ya no es un número inventado.
+#
+# ── Ahora prueba esto ──────────────────────────────────────
+#
+# Pregunta: "¿Cuál es la tasa de churn del plan básico?"
+#
+# Mira el código generado. ¿Qué valor usa para filtrar
+# el plan? ¿Da el resultado que esperabas?
+#
+# Pista: el LLM no conoce los valores reales de las columnas.
+# Solo sabe los nombres (plan, status, center...) pero no
+# sabe que el plan básico se llama "basic" en los datos, no
+# "básico". Está adivinando.
+#
+# ── El reto de verdad ──────────────────────────────────────
+#
+# Modifica el system_prompt (línea ~110) para que incluya
+# los valores reales de las columnas más importantes:
+#
+#   Valores de 'plan': basic (29€), premium (49€), family (69€)
+#   Valores de 'status': active, churned
+#   Valores de 'center': downtown, northside, eastpark,
+#                         westfield, southgate
+#
+# Vuelve a hacer la misma pregunta. ¿Ahora funciona?
+#
+# Esta es una lección clave: text-to-code es potente,
+# pero el LLM necesita conocer el vocabulario de los datos
+# para escribir código correcto. El prompt importa siempre.
 #
 # ── Si has terminado antes ──────────────────────────────────
 #
-#   A. Compara las respuestas con las del paso_6 (sesión 1).
-#      ¿Cuáles eran inventadas? ¿Cuáles ahora son correctas?
-#
-#   B. Prueba preguntas más complejas:
+#   A. Prueba preguntas más complejas:
 #        "¿Cuál es el margen medio por plan?"
 #        "¿Qué canal de captación trae socios más fieles?"
 #        "¿En qué mes hubo más bajas?"
+#      ¿Las responde bien? ¿Necesitas añadir más valores
+#      al prompt (churn_reason, acquisition_channel...)?
 #
-#   C. Prueba una pregunta que haga fallar el código:
+#   B. Prueba una pregunta que haga fallar el código:
 #        "Dibuja un gráfico de barras del churn por centro"
-#      ¿Qué pasa? ¿Qué error da?
+#      ¿Qué pasa? ¿Qué error da? (Lo arreglamos en paso_10.)
 #
-#   D. Fíjate en el código generado. ¿Tiene sentido?
-#      ¿Lo habrías escrito igual? ¿Ves algún error lógico?
+#   C. Compara con las respuestas del paso_6 (sesión 1).
+#      Allí el LLM inventaba números. Aquí calcula de verdad.
+#      ¿Cuáles coinciden? ¿Cuáles eran inventadas?
 #
 # Ejecuta:  streamlit run exercises2/paso_9.py
 # ============================================================

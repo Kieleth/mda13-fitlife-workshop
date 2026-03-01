@@ -162,16 +162,16 @@ Columnas:
 - churn_reason: motivo de baja (price, competitor, no_use, relocation, personal)
 
 Distribución por plan:
-{___}
+{planes}
 
 Distribución por centro:
-{___}
+{centros}
 
 Distribución por estado:
-{___}
+{status}
 
 Distribución por canal de captación:
-{___}
+{canales}
 
 Muestra de datos (5 primeras filas):
 {df_members.head().to_string()}

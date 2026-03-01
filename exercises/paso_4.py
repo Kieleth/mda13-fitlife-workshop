@@ -84,4 +84,4 @@ if prompt:
     #    ↓ Borra ___ y escribe: st.write(f"Has dicho: {prompt}")
     #    Importante: debe ir indentado (con espacios) dentro del with
     with st.chat_message("assistant"):
-        ___
+        st.write(f"Has dicho: {prompt}")

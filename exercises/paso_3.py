@@ -69,10 +69,10 @@ st.dataframe(df_members.head())
 
 # --- Dataset 2: contexto mensual ---
 # ↓ Mismo patrón que la línea 63: pd.read_csv("data/...")
-df_context = ___  # Carga data/fitlife_context.csv
+df_context = pd.read_csv("data/fitlife_context.csv")
 
 st.subheader("Contexto mensual")
 # ↓ Mismo patrón que la línea 66: len(df_context) y len(df_context.columns)
-st.write(f"**{___}** filas, **{___}** columnas")
+st.write(f"**{len(df_context)}** filas, **{len(df_context.columns)}** columnas")
 st.write("Columnas:", list(df_context.columns))
 st.dataframe(df_context.head())

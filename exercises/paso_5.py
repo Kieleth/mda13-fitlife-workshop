@@ -99,7 +99,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-client = ___  # Crea el cliente: OpenAI()
+client = OpenAI()
 
 st.title("FitLife Dashboard")
 

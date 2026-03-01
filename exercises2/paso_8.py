@@ -108,7 +108,7 @@ if prompt:
         #   "Genera solo código Python que responda..."
         #   o "Escribe únicamente código Python..."
 
-        system_prompt = f"""___
+        system_prompt = f"""Genera solo código Python/pandas que responda a la pregunta del usuario.
 
 Tienes acceso a dos DataFrames ya cargados:
 

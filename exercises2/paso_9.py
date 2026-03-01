@@ -142,7 +142,7 @@ Reglas:
         # ↓ Borra ___ y escribe:
         #   re.search(r"```(?:python)?\n(.*?)```", generated, re.DOTALL)
 
-        match = ___
+        match = re.search(r"```(?:python)?\n(.*?)```", generated, re.DOTALL)
 
         if match:
             code = match.group(1)
@@ -165,7 +165,7 @@ Reglas:
                 "pd": pd,
             }
 
-            ___
+            exec(code, exec_globals)
 
             # Mostrar el resultado
             if "resultado" in exec_globals:

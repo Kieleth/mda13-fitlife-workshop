@@ -147,7 +147,7 @@ Reglas:
             # ↓ Borra ___ y escribe:
             #   st.expander("Ver código generado")
 
-            with ___:
+            with st.expander("Ver código generado"):
                 st.code(code, language="python")
 
             # ── Ejecutar con try/except ─────────────────────
@@ -173,7 +173,7 @@ Reglas:
                 # ↓ Borra ___ y escribe:
                 #   st.error(f"Error al ejecutar el código: {e}")
 
-                ___
+                st.error(f"Error al ejecutar el código: {e}")
 
                 # Mostrar detalles técnicos en un expander
                 # para que el usuario pueda ver qué falló.
@@ -181,7 +181,7 @@ Reglas:
                 # ↓ Borra ___ y escribe:
                 #   st.expander("Detalles del error")
 
-                with ___:
+                with st.expander("Detalles del error"):
                     st.write(f"**Tipo de error:** `{type(e).__name__}`")
                     st.write(f"**Mensaje:** `{e}`")
                     st.write("**Código que falló:**")

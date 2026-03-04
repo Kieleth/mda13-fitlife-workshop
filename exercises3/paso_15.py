@@ -8,7 +8,7 @@
 #
 #   ✓ Text-to-code (sesión 2)
 #   ✓ Manejo de errores y reintentos (sesión 2)
-#   ✓ Prompt enriquecido con valores y ejemplos (sesión 3)
+#   ✓ Prompt enriquecido con valores (sesión 2) y ejemplos (sesión 3)
 #   ✓ Memoria de conversación (sesión 3)
 #   ✓ Interpretación de resultados (sesión 3)
 #
@@ -76,6 +76,9 @@ load_dotenv()
 client = OpenAI()
 MODEL = "gpt-4.1-mini"
 MAX_RETRIES = 3
+
+# ── Configuración de página (debe ir antes de cualquier otro comando st.) ──
+st.set_page_config(page_title="FitLife Analytics v3", layout="wide")
 
 # ── Datos ───────────────────────────────────────────────────
 
@@ -193,8 +196,6 @@ Reglas generales:
 - Envuelve el código en triple backtick python."""
 
 # ── Interfaz ────────────────────────────────────────────────
-
-st.set_page_config(page_title="FitLife Analytics v3", layout="wide")
 
 st.title("FitLife Analytics v3")
 st.caption(f"Analista conversacional · {len(df_members):,} registros · {MODEL}")

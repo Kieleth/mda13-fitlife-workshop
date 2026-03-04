@@ -39,10 +39,10 @@
 #
 # ── Tu reto ─────────────────────────────────────────────────
 #
-# Completa las dos secciones marcadas con ___ :
+# Completa las dos variables marcadas con ___ :
 #
-#   1. Añadir ejemplos de código al prompt del sistema
-#   2. Añadir reglas de cálculo específicas del negocio
+#   1. EXAMPLES: añadir ejemplos de código (busca EXAMPLES = """___""")
+#   2. RULES: añadir reglas de cálculo del negocio (busca RULES = """___""")
 #
 # Después, prueba las preguntas difíciles de PREGUNTAS_TEST.md
 # (preguntas 7-12). ¿Cuántas más responde correctamente?
@@ -133,6 +133,22 @@ Si el resultado sugiere algo accionable, menciónalo."""
 # ── Prompt del sistema (EXPERTO) ───────────────────────────
 # Este es el prompt que vamos a mejorar con ejemplos y reglas.
 
+# ── PASO 1: Escribe los ejemplos de código ──────────────────
+# Copia aquí 2-3 ejemplos de las PISTAS de abajo.
+# Reemplaza el ___ con el texto de los ejemplos.
+#
+# ↓ Borra ___ y escribe tus ejemplos (ver PISTAS más abajo)
+
+EXAMPLES = """___"""
+
+# ── PASO 2: Escribe las reglas de cálculo ───────────────────
+# Copia aquí las reglas específicas del negocio.
+# Reemplaza el ___ con las reglas.
+#
+# ↓ Borra ___ y escribe tus reglas (ver PISTAS más abajo)
+
+RULES = """___"""
+
 SYSTEM_PROMPT = f"""Genera solo código Python/pandas que responda a la pregunta del usuario.
 
 Tienes acceso a dos DataFrames ya cargados:
@@ -150,11 +166,11 @@ Tienes acceso a dos DataFrames ya cargados:
 
 EJEMPLOS DE CÓDIGO:
 
-{___}
+{EXAMPLES}
 
 REGLAS DE CÁLCULO:
 
-{___}
+{RULES}
 
 Reglas generales:
 - Usa pandas para las operaciones.

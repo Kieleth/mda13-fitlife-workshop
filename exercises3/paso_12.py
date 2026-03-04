@@ -6,7 +6,7 @@
 #
 # Construimos un sistema text-to-code: el LLM genera código
 # Python, lo ejecutamos con exec(), y mostramos el resultado.
-# Añadimos manejo de errores y reintentos automáticos.
+# Añadimos manejo de errores y, opcionalmente, reintentos.
 #
 # Pero hay un problema: cada vez que escribes una pregunta,
 # la app se OLVIDA de todo lo anterior. No puedes preguntar:

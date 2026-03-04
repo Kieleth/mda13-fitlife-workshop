@@ -139,7 +139,19 @@ Si el resultado sugiere algo accionable, menciónalo."""
 #
 # ↓ Borra ___ y escribe tus ejemplos (ver PISTAS más abajo)
 
-EXAMPLES = """___"""
+EXAMPLES = """Ejemplo 1 — Tasa de churn por plan:
+churn_plan = df_members.groupby('plan')['status'].apply(
+    lambda x: (x == 'churned').sum() / len(x) * 100
+)
+resultado = churn_plan
+
+Ejemplo 2 — Cruzar tablas (socios + contexto):
+merged = df_members.merge(df_context, on='month')
+resultado = merged.groupby('month')[['visits_this_month', 'competitor_lowcost_price']].mean()
+
+Ejemplo 3 — Margen por socio:
+df_members['margin'] = df_members['price_paid'] - df_members['cost_to_serve']
+resultado = df_members.groupby('plan')['margin'].mean()"""
 
 # ── PASO 2: Escribe las reglas de cálculo ───────────────────
 # Copia aquí las reglas específicas del negocio.
@@ -147,7 +159,11 @@ EXAMPLES = """___"""
 #
 # ↓ Borra ___ y escribe tus reglas (ver PISTAS más abajo)
 
-RULES = """___"""
+RULES = """- Tasa de churn = churned / total * 100 (como porcentaje)
+- Margen = price_paid - cost_to_serve
+- Para cruzar tablas: df_members.merge(df_context, on='month')
+- Un socio "churned" es uno con status == 'churned' en ese mes
+- 'month' es string con formato YYYY-MM. Para extraer año: pd.to_datetime(df['month']).dt.year"""
 
 SYSTEM_PROMPT = f"""Genera solo código Python/pandas que responda a la pregunta del usuario.
 

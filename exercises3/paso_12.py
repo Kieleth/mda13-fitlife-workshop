@@ -179,7 +179,7 @@ st.divider()
 #   st.session_state.messages = []
 
 if "messages" not in st.session_state:
-    ___
+    st.session_state.messages = []
 
 # ── Mostrar el historial de mensajes ───────────────────────
 # Cada vez que Streamlit ejecuta el archivo, necesitamos
@@ -200,10 +200,10 @@ if prompt := st.chat_input("Pregunta sobre los datos de FitLife..."):
     # Añadimos el mensaje del usuario al historial para que
     # se muestre en la siguiente ejecución y el LLM lo vea.
     #
-    # ↓ Borra ___ y escribe:
+    # ↓ Borro ___ y escribo:
     #   st.session_state.messages.append({"role": "user", "content": prompt})
 
-    ___
+    st.session_state.messages.append({"role": "user", "content": prompt})
 
     with st.chat_message("user"):
         st.write(prompt)
@@ -267,7 +267,7 @@ if prompt := st.chat_input("Pregunta sobre los datos de FitLife..."):
         # Igual que con el usuario, guardamos la respuesta
         # para que se muestre en el historial.
         #
-        # ↓ Borra ___ y escribe:
+        # ↓ Borro ___ y escribo:
         #   st.session_state.messages.append({"role": "assistant", "content": answer_text, "code": last_code})
 
-        ___
+        st.session_state.messages.append({"role": "assistant", "content": answer_text, "code": last_code})

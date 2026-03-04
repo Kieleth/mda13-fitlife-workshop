@@ -233,7 +233,15 @@ if prompt := st.chat_input("Pregunta sobre los datos de FitLife..."):
                 #   Sé conciso (2-3 frases). Usa los números reales.
                 #   Si el resultado sugiere algo accionable, menciónalo."""
 
-                interpretation_prompt = ___
+                interpretation_prompt = f"""Eres un analista de datos experto en el negocio de FitLife,
+una red de 5 gimnasios de proximidad.
+
+El usuario preguntó: {prompt}
+El resultado calculado sobre los datos reales es: {resultado}
+
+Explica este resultado en el contexto del negocio.
+Sé conciso (2-3 frases). Usa los números reales.
+Si el resultado sugiere algo accionable, menciónalo."""
 
                 # ── PASO B: llamar al LLM para interpretar ──
                 # Misma estructura que la pasada 1, pero esta vez
@@ -248,7 +256,13 @@ if prompt := st.chat_input("Pregunta sobre los datos de FitLife..."):
                 #       ]
                 #   )
 
-                interpretation_response = ___
+                interpretation_response = client.chat.completions.create(
+                    model=MODEL,
+                    messages=[
+                        {"role": "system", "content": interpretation_prompt},
+                        {"role": "user", "content": prompt}
+                    ]
+                )
 
                 interpretation = interpretation_response.choices[0].message.content
                 st.markdown(interpretation)

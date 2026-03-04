@@ -12,6 +12,7 @@ El caso de estudio es **FitLife**, una red de gimnasios con un problema de churn
 |---------|--------|
 | `exercises/` | Ejercicios sesión 1 (paso 0 a 7) |
 | `exercises2/` | Ejercicios sesión 2 (paso 8 a 11) |
+| `exercises3/` | Ejercicios sesión 3 (paso 12 a 15) |
 | `extras/` | Ejercicios opcionales para quienes quieran más |
 | `data/` | Los datasets de FitLife (miembros + contexto mensual) |
 | `test_app.py` | App de verificación — confirma que tu entorno está bien configurado |
@@ -20,9 +21,11 @@ El caso de estudio es **FitLife**, una red de gimnasios con un problema de churn
 | `SETUP.md` | Guía de instalación paso a paso |
 | `ACTUALIZAR.md` | Cómo actualizar el proyecto entre sesiones |
 | `SESION1_REPASO.md` | Repaso completo de la sesión 1 con código resuelto |
+| `SESION2_REPASO.md` | Repaso completo de la sesión 2 con código resuelto |
 | `GIT_INTRO.md` | Qué es Git y GitHub en 5 minutos (lectura opcional) |
 | `SESION1_CHECKLIST.md` | Checklist para la primera sesión |
 | `SESION2_CHECKLIST.md` | Checklist para la segunda sesión |
+| `SESION3_CHECKLIST.md` | Checklist para la tercera sesión |
 
 ---
 
@@ -71,6 +74,23 @@ Ejecuta con `streamlit run exercises2/paso_X.py` (desde la raíz del proyecto).
 | `paso_11.py` | **Bonus.** Autocorrección | El LLM recibe el error y corrige su propio código. Sin blancos — léelo y pruébalo. |
 
 **La idea clave:** el LLM no necesita calcular — necesita *traducir*. Traduce tu pregunta en español a código Python. Python calcula. El resultado es real.
+
+---
+
+## Ejercicios (sesión 3)
+
+En la sesión 3 transformamos el sistema de calculadora a analista: memoria de conversación, interpretación de resultados, y prompt experto con ejemplos.
+
+Ejecuta con `streamlit run exercises3/paso_X.py` (desde la raíz del proyecto).
+
+| Ejercicio | Qué construyes | El reto |
+|-----------|---------------|---------|
+| `paso_12.py` | Conversación con memoria | Añade `st.session_state` para que el chat recuerde preguntas anteriores. |
+| `paso_13.py` | Interpretación de resultados | Añade una segunda llamada al LLM que explica qué significan los números. |
+| `paso_14.py` | Prompt experto con ejemplos | Añade few-shot examples y reglas de cálculo al prompt del sistema. |
+| `paso_15.py` | **Bonus.** El analista completo | Todo integrado. Úsalo para investigar el caso FitLife con las 12 preguntas del test. |
+
+**La idea clave:** el mismo modelo de lenguaje puede ser una calculadora o un analista. La diferencia está en cómo lo usas: memoria para contexto, dos pasadas para interpretación, y ejemplos para precisión.
 
 ---
 

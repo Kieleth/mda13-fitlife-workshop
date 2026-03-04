@@ -529,3 +529,98 @@ Si hay conflictos (porque tu cambiaste un archivo que el profesor tambien cambio
 ## Resumen en una frase
 
 Git guarda fotos de tu proyecto (commits). Las ramas te dejan experimentar sin romper nada. Los conflictos se resuelven eligiendo que version quieres. Con 10 comandos te manejas en el 99% de las situaciones.
+
+---
+
+---
+
+# PARTE C — Rescate: cuando git pull sale mal
+
+Cada sesion os pedire que hagais `git pull` para descargar material nuevo. A veces eso choca con cambios que habeis hecho en vuestros archivos. Aqui teneis las recetas para salir de cualquier lio.
+
+---
+
+## Si todavia no habeis hecho git pull
+
+Antes de nada, vamos a guardar vuestro trabajo en un sitio seguro y luego descargar lo nuevo. Copiad estas 3 lineas en la terminal, una por una:
+
+```
+git checkout -b mi-trabajo
+```
+
+```
+git add -A && git commit -m "guardado mi trabajo" --allow-empty
+```
+
+```
+git checkout main && git fetch origin && git reset --hard origin/main
+```
+
+Que acaba de pasar:
+- La primera linea crea una rama llamada `mi-trabajo` con todo lo que teneis ahora. Vuestros archivos no se pierden — estan ahi.
+- La segunda guarda todo en esa rama.
+- La tercera vuelve a `main` y lo deja exactamente igual que lo que hay en GitHub. Limpio, sin conflictos, sin dramas.
+
+Si os dice `branch 'mi-trabajo' already exists`, usad otro nombre: `mi-trabajo-2`, `mi-trabajo-sesion3`, lo que sea.
+
+---
+
+## Si ya habeis hecho git pull y estais en medio de un conflicto
+
+Sabeis que estais en un conflicto si Git os ha dicho `CONFLICT`, o si al abrir un archivo veis lineas raras con `<<<<<<<` y `>>>>>>>`, o si `git status` dice `Unmerged paths`.
+
+Primero, cancelad el merge que se ha quedado a medias:
+
+```
+git merge --abort
+```
+
+Eso os devuelve al estado de antes del pull. Ahora ya podeis hacer el proceso normal:
+
+```
+git checkout -b mi-trabajo
+```
+
+```
+git add -A && git commit -m "guardado mi trabajo" --allow-empty
+```
+
+```
+git checkout main && git fetch origin && git reset --hard origin/main
+```
+
+---
+
+## Si nada funciona
+
+Opcion nuclear. Funciona siempre. Renombrad vuestra carpeta y descargad el proyecto de cero:
+
+```
+cd ..
+```
+
+```
+mv mda13-fitlife-workshop mda13-backup
+```
+
+```
+git clone https://github.com/Kieleth/mda13-fitlife-workshop.git
+```
+
+```
+cd mda13-fitlife-workshop
+```
+
+Vuestro trabajo anterior esta en la carpeta `mda13-backup`. La nueva carpeta es una copia limpia de GitHub.
+
+Despues de esto, recordad activar el entorno:
+
+```
+conda activate mda13
+```
+
+Y verificar que todo funciona:
+
+```
+streamlit run test_app.py
+```

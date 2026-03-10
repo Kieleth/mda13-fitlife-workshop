@@ -23,6 +23,9 @@ El caso de estudio es **FitLife**, una red de gimnasios con un problema de churn
 | `SESION1_REPASO.md` | Repaso completo de la sesión 1 con código resuelto |
 | `SESION2_REPASO.md` | Repaso completo de la sesión 2 con código resuelto |
 | `GIT_INTRO.md` | Qué es Git y GitHub en 5 minutos (lectura opcional) |
+| `GIT_COMPANION.md` | Guía práctica de Git: desde cero hasta ramas, conflictos y rescate de `git pull` |
+| `DEBUGGING_STREAMLIT_AND_LLMS.md` | Trucos para ver qué pasa por dentro de tu app y de las llamadas al LLM |
+| `DE_EXPERIMENTO_A_PRODUCCION.md` | Qué cambia cuando quieres que tu app la use alguien más: datos, seguridad, deploy, costes |
 | `SESION1_CHECKLIST.md` | Checklist para la primera sesión |
 | `SESION2_CHECKLIST.md` | Checklist para la segunda sesión |
 | `SESION3_CHECKLIST.md` | Checklist para la tercera sesión |
